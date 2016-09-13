@@ -11,7 +11,35 @@
 		D101E2251D878A7700864A0F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D101E2241D878A7700864A0F /* ViewController.swift */; };
 		D101E2271D878A7700864A0F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D101E2261D878A7700864A0F /* Assets.xcassets */; };
 		D101E22A1D878A7700864A0F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D101E2281D878A7700864A0F /* Main.storyboard */; };
+		D101E2381D878E1200864A0F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D101E2371D878E1200864A0F /* Cocoa.framework */; };
+		D101E23D1D878E1200864A0F /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D101E23C1D878E1200864A0F /* SourceEditorExtension.swift */; };
+		D101E23F1D878E1200864A0F /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = D101E23E1D878E1200864A0F /* SourceEditorCommand.swift */; };
+		D101E2431D878E1200864A0F /* next-argument.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D101E2351D878E1200864A0F /* next-argument.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D101E2411D878E1200864A0F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D101E2171D878A7700864A0F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D101E2341D878E1200864A0F;
+			remoteInfo = "next-argument";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D101E2471D878E1200864A0F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				D101E2431D878E1200864A0F /* next-argument.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D101E21F1D878A7700864A0F /* go-to.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "go-to.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,6 +48,12 @@
 		D101E2261D878A7700864A0F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D101E2291D878A7700864A0F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D101E22B1D878A7700864A0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D101E2351D878E1200864A0F /* next-argument.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "next-argument.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D101E2371D878E1200864A0F /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		D101E23B1D878E1200864A0F /* next_argument.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = next_argument.entitlements; sourceTree = "<group>"; };
+		D101E23C1D878E1200864A0F /* SourceEditorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorExtension.swift; sourceTree = "<group>"; };
+		D101E23E1D878E1200864A0F /* SourceEditorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorCommand.swift; sourceTree = "<group>"; };
+		D101E2401D878E1200864A0F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +64,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D101E2321D878E1200864A0F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D101E2381D878E1200864A0F /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -37,6 +79,8 @@
 			isa = PBXGroup;
 			children = (
 				D101E2211D878A7700864A0F /* go-to */,
+				D101E2391D878E1200864A0F /* next-argument */,
+				D101E2361D878E1200864A0F /* Frameworks */,
 				D101E2201D878A7700864A0F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				D101E21F1D878A7700864A0F /* go-to.app */,
+				D101E2351D878E1200864A0F /* next-argument.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -61,6 +106,33 @@
 			path = "go-to";
 			sourceTree = "<group>";
 		};
+		D101E2361D878E1200864A0F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D101E2371D878E1200864A0F /* Cocoa.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D101E2391D878E1200864A0F /* next-argument */ = {
+			isa = PBXGroup;
+			children = (
+				D101E23C1D878E1200864A0F /* SourceEditorExtension.swift */,
+				D101E23E1D878E1200864A0F /* SourceEditorCommand.swift */,
+				D101E2401D878E1200864A0F /* Info.plist */,
+				D101E23A1D878E1200864A0F /* Supporting Files */,
+			);
+			path = "next-argument";
+			sourceTree = "<group>";
+		};
+		D101E23A1D878E1200864A0F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D101E23B1D878E1200864A0F /* next_argument.entitlements */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -71,15 +143,34 @@
 				D101E21B1D878A7700864A0F /* Sources */,
 				D101E21C1D878A7700864A0F /* Frameworks */,
 				D101E21D1D878A7700864A0F /* Resources */,
+				D101E2471D878E1200864A0F /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				D101E2421D878E1200864A0F /* PBXTargetDependency */,
 			);
 			name = "go-to";
 			productName = "go-to";
 			productReference = D101E21F1D878A7700864A0F /* go-to.app */;
 			productType = "com.apple.product-type.application";
+		};
+		D101E2341D878E1200864A0F /* next-argument */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D101E2441D878E1200864A0F /* Build configuration list for PBXNativeTarget "next-argument" */;
+			buildPhases = (
+				D101E2311D878E1200864A0F /* Sources */,
+				D101E2321D878E1200864A0F /* Frameworks */,
+				D101E2331D878E1200864A0F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "next-argument";
+			productName = "next-argument";
+			productReference = D101E2351D878E1200864A0F /* next-argument.appex */;
+			productType = "com.apple.product-type.xcode-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -93,6 +184,12 @@
 				TargetAttributes = {
 					D101E21E1D878A7700864A0F = {
 						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = KV69SGCC3Q;
+						ProvisioningStyle = Automatic;
+					};
+					D101E2341D878E1200864A0F = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = KV69SGCC3Q;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -111,6 +208,7 @@
 			projectRoot = "";
 			targets = (
 				D101E21E1D878A7700864A0F /* go-to */,
+				D101E2341D878E1200864A0F /* next-argument */,
 			);
 		};
 /* End PBXProject section */
@@ -122,6 +220,13 @@
 			files = (
 				D101E2271D878A7700864A0F /* Assets.xcassets in Resources */,
 				D101E22A1D878A7700864A0F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D101E2331D878E1200864A0F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +242,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D101E2311D878E1200864A0F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D101E23D1D878E1200864A0F /* SourceEditorExtension.swift in Sources */,
+				D101E23F1D878E1200864A0F /* SourceEditorCommand.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D101E2421D878E1200864A0F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D101E2341D878E1200864A0F /* next-argument */;
+			targetProxy = D101E2411D878E1200864A0F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		D101E2281D878A7700864A0F /* Main.storyboard */ = {
@@ -244,8 +366,11 @@
 		D101E22F1D878A7700864A0F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KV69SGCC3Q;
 				INFOPLIST_FILE = "go-to/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "rjoudrey.go-to";
@@ -257,12 +382,49 @@
 		D101E2301D878A7700864A0F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KV69SGCC3Q;
 				INFOPLIST_FILE = "go-to/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "rjoudrey.go-to";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		D101E2451D878E1200864A0F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "next-argument/next_argument.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KV69SGCC3Q;
+				INFOPLIST_FILE = "next-argument/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "rjoudrey.go-to.next-argument";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		D101E2461D878E1200864A0F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "next-argument/next_argument.entitlements";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = KV69SGCC3Q;
+				INFOPLIST_FILE = "next-argument/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @executable_path/../../../../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = "rjoudrey.go-to.next-argument";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -286,6 +448,16 @@
 				D101E2301D878A7700864A0F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D101E2441D878E1200864A0F /* Build configuration list for PBXNativeTarget "next-argument" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D101E2451D878E1200864A0F /* Debug */,
+				D101E2461D878E1200864A0F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
