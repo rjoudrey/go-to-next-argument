@@ -22,46 +22,40 @@ extension String {
     }
 }
 
+func moveCursor(_ cursor: XCSourceTextRange, toColumn column: Int, line: Int? = nil) {
+    cursor.start.column = column
+    cursor.end.column = column
+    if let line = line {
+        cursor.start.line = line
+        cursor.end.line = line
+    }
+}
+
+func nextColon(in line: String, startColumn: Int = 0) -> Int? {
+    let rem = String(line.characters.suffix(from: line.characters.index(line.characters.startIndex, offsetBy: startColumn)))
+    if let matchEnd = rem.rangeOfString(matchingPattern: ": [^ ]*?")?.upperBound {
+        let remOffset = rem.distance(from: rem.startIndex, to: matchEnd)
+        let lineOffset = startColumn + remOffset
+        return lineOffset
+    }
+    return nil
+}
+
 class SourceEditorCommand: NSObject, XCSourceEditorCommand {
-    
     func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void ) -> Void {
         // Implement your command here, invoking the completion handler when done. Pass it nil on success, and an NSError on failure.
         if let cursor = invocation.buffer.selections.firstObject as? XCSourceTextRange {
             let allLines = Array(invocation.buffer.lines).map { $0 as! String }
-            let line = allLines[cursor.start.line]
-            if let colonLoc = nextColon(in: line, startColumn: cursor.start.column) {
-                moveCursor(cursor, toColumn: colonLoc)
-            }
-            else {
-                for lineIndex in allLines.indices.suffix(from: cursor.start.line) {
-                    let line = allLines[lineIndex]
-                    if let colonLoc = nextColon(in: line) {
-                        moveCursor(cursor, toColumn: colonLoc, line: lineIndex)
-                        break
-                    }
+            let start = cursor.start.line
+            for i in allLines.indices.suffix(from: start) {
+                let line = allLines[i]
+                let startColumn = i == start ? cursor.start.column : 0
+                if let colonLoc = nextColon(in: line, startColumn: startColumn) {
+                    moveCursor(cursor, toColumn: colonLoc, line: i)
+                    break
                 }
             }
         }
         completionHandler(nil)
     }
-    
-    func moveCursor(_ cursor: XCSourceTextRange, toColumn column: Int, line: Int? = nil) {
-        cursor.start.column = column
-        cursor.end.column = column
-        if let line = line {
-            cursor.start.line = line
-            cursor.end.line = line
-        }
-    }
-    
-    func nextColon(in line: String, startColumn: Int = 0) -> Int? {
-        let rem = String(line.characters.suffix(from: line.characters.index(line.characters.startIndex, offsetBy: startColumn)))
-        if let matchEnd = rem.rangeOfString(matchingPattern: ": [^ ]*?")?.upperBound {
-            let remOffset = rem.distance(from: rem.startIndex, to: matchEnd)
-            let lineOffset = startColumn + remOffset
-            return lineOffset
-        }
-        return nil
-    }
-    
 }
